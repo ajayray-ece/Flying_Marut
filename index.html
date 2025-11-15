@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flying Marut - Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🛩️ Flying Marut</h1>
+            <div class="score-board">
+                <div class="score">Score: <span id="score">0</span></div>
+                <div class="high-score">Best: <span id="highScore">0</span></div>
+            </div>
+        </div>
+        
+        <div class="game-wrapper">
+            <canvas id="gameCanvas"></canvas>
+            <div class="game-overlay" id="startScreen">
+                <div class="overlay-content">
+                    <h2>Flying Marut</h2>
+                    <p>Tap or Click to Fly!</p>
+                    <p class="instructions">Avoid fire and collect coins</p>
+                    <button class="start-btn" id="startBtn">Start Game</button>
+                </div>
+            </div>
+            
+            <div class="game-overlay" id="gameOverScreen" style="display: none;">
+                <div class="overlay-content">
+                    <h2>Game Over!</h2>
+                    <p>Final Score: <span id="finalScore">0</span></p>
+                    <img id="gameOverImage" src="images/marut.jpg" alt="Game Over" class="game-over-image" style="display: none;">
+                    <button class="start-btn" id="restartBtn">Play Again</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls-info">
+            <p>🖱️ Click/Tap to fly up | 🔊 Sound: <button id="soundToggle">ON</button></p>
+        </div>
+    </div>
+    
+    <!-- Audio Elements -->
+    <audio id="backgroundMusic" loop>
+        <source src="background.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="jumpSound">
+        <source src="jump.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="coinSound">
+        <source src="coin.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="gameOverSound">
+        <source src="out.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script src="game.js"></script>
+</body>
+</html>
+
