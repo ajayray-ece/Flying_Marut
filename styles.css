@@ -78,11 +78,13 @@ body {
     background: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     z-index: 10;
-    overflow-y: auto;  /* Allow scrolling on mobile */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     padding: 10px;
     box-sizing: border-box;
+    padding-top: 20px;
 }
 
 .overlay-content {
@@ -97,6 +99,7 @@ body {
     overflow-y: auto;
     box-sizing: border-box;
     margin: auto;
+    position: relative;
 }
 
 .overlay-content h2 {
@@ -229,39 +232,47 @@ body {
     }
     
     .overlay-content {
-        padding: 15px;
-        max-height: 85vh;
+        padding: 15px 15px 20px 15px;
+        max-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     
     .overlay-content h2 {
         font-size: 1.5em;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
     
     .overlay-content p {
         font-size: 0.9em;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
     
     .game-over-image {
-        max-height: 200px;
-        margin: 15px 0;
+        max-height: 180px;
+        margin: 10px 0;
+        flex-shrink: 1;
     }
     
     .start-btn {
-        padding: 12px 30px;
-        font-size: 1.1em;
-        min-height: 48px;
-        width: 90%;
-        max-width: 250px;
-        margin: 15px auto 10px auto;
+        padding: 14px 30px;
+        font-size: 1.2em;
+        min-height: 50px;
+        width: 95%;
+        max-width: 280px;
+        margin: 15px auto 5px auto;
+        flex-shrink: 0;
     }
     
     #restartBtn {
         display: block !important;
         visibility: visible !important;
-        position: relative;
-        z-index: 100;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 1000 !important;
+        bottom: auto !important;
+        transform: none !important;
     }
     
     .controls-info {

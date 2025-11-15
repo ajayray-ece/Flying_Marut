@@ -532,6 +532,18 @@ function gameOver() {
         img.src = gameOverImage.src;
     }
     
+    // Ensure restart button is visible and scroll into view on mobile
+    setTimeout(() => {
+        const restartBtn = document.getElementById('restartBtn');
+        if (restartBtn) {
+            restartBtn.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+            // Force visibility
+            restartBtn.style.display = 'block';
+            restartBtn.style.visibility = 'visible';
+            restartBtn.style.opacity = '1';
+        }
+    }, 100);
+    
     if (soundEnabled) {
         gameOverSound.volume = 0.7;  // Set volume to 70%
         gameOverSound.currentTime = 0;
