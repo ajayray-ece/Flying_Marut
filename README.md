@@ -1,4 +1,4 @@
-# 🛩️ Flying Modi Game
+# 🛩️ Flying Marut Game
 
 A fun, responsive flying game where you control Modi and avoid obstacles while collecting coins!
 
@@ -26,7 +26,7 @@ To add your own audio files, place them in the `audio` folder:
 - `background.mp3` - Background music (loops during gameplay)
 - `jump.mp3` - Sound when Modi jumps/flies up
 - `coin.mp3` - Sound when collecting coins
-- `gameover.mp3` - Sound when game ends
+- `out2.mp3` - Sound when game ends
 
 **Note**: The game will work without audio files, but audio won't play. You can use any audio format supported by browsers (MP3, OGG, WAV).
 
@@ -58,5 +58,5 @@ Works on all modern browsers:
 - Edge
 - Mobile browsers (iOS Safari, Chrome Mobile)
 
-Enjoy playing Flying Modi! 🎉
+Enjoy playing Flying Marut! 🎉
 
