@@ -82,9 +82,10 @@ body {
     z-index: 10;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 10px;
+    padding: 5px;
     box-sizing: border-box;
-    padding-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .overlay-content {
@@ -100,6 +101,14 @@ body {
     box-sizing: border-box;
     margin: auto;
     position: relative;
+}
+
+/* Mobile specific - ensure button is always visible */
+@media (max-width: 480px) {
+    .overlay-content {
+        max-width: 95%;
+        max-height: calc(100vh - 20px);
+    }
 }
 
 .overlay-content h2 {
@@ -232,47 +241,56 @@ body {
     }
     
     .overlay-content {
-        padding: 15px 15px 20px 15px;
-        max-height: 90vh;
+        padding: 10px 10px 15px 10px;
+        max-height: calc(100vh - 40px);
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-start;
+        overflow-y: auto;
     }
     
     .overlay-content h2 {
-        font-size: 1.5em;
-        margin-bottom: 10px;
+        font-size: 1.3em;
+        margin-bottom: 5px;
+        line-height: 1.2;
     }
     
     .overlay-content p {
-        font-size: 0.9em;
-        margin-bottom: 8px;
+        font-size: 0.85em;
+        margin-bottom: 5px;
+        line-height: 1.2;
     }
     
     .game-over-image {
-        max-height: 180px;
-        margin: 10px 0;
+        max-height: 120px;
+        margin: 8px 0;
         flex-shrink: 1;
+        object-fit: cover;
     }
     
     .start-btn {
-        padding: 14px 30px;
-        font-size: 1.2em;
-        min-height: 50px;
-        width: 95%;
-        max-width: 280px;
-        margin: 15px auto 5px auto;
+        padding: 12px 25px;
+        font-size: 1.1em;
+        min-height: 48px;
+        width: 100%;
+        max-width: 100%;
+        margin: 10px auto 0 auto;
         flex-shrink: 0;
+        position: sticky;
+        bottom: 0;
+        z-index: 1001;
     }
     
     #restartBtn {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
-        position: relative !important;
-        z-index: 1000 !important;
-        bottom: auto !important;
-        transform: none !important;
+        position: sticky !important;
+        bottom: 0 !important;
+        z-index: 1001 !important;
+        width: 100% !important;
+        margin-top: 10px !important;
+        margin-bottom: 0 !important;
     }
     
     .controls-info {

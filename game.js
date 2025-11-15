@@ -535,14 +535,29 @@ function gameOver() {
     // Ensure restart button is visible and scroll into view on mobile
     setTimeout(() => {
         const restartBtn = document.getElementById('restartBtn');
+        const gameOverScreen = document.getElementById('gameOverScreen');
         if (restartBtn) {
-            restartBtn.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
-            // Force visibility
+            // Force visibility with inline styles
             restartBtn.style.display = 'block';
             restartBtn.style.visibility = 'visible';
             restartBtn.style.opacity = '1';
+            restartBtn.style.position = 'sticky';
+            restartBtn.style.bottom = '0';
+            restartBtn.style.zIndex = '1001';
+            restartBtn.style.width = '100%';
+            restartBtn.style.marginTop = '10px';
+            
+            // Scroll button into view
+            restartBtn.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+            
+            // Also scroll the overlay to bottom to show button
+            if (gameOverScreen) {
+                setTimeout(() => {
+                    gameOverScreen.scrollTop = gameOverScreen.scrollHeight;
+                }, 200);
+            }
         }
-    }, 100);
+    }, 150);
     
     if (soundEnabled) {
         gameOverSound.volume = 0.7;  // Set volume to 70%
