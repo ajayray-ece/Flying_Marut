@@ -19,32 +19,6 @@ A fun, responsive flying game where you control Modi and avoid obstacles while c
 5. Collect golden coins for bonus points
 6. Try to achieve the highest score!
 
-## 🔊 Adding Audio Files
-
-To add your own audio files, place them in the `audio` folder:
-
-- `background.mp3` - Background music (loops during gameplay)
-- `jump.mp3` - Sound when Modi jumps/flies up
-- `coin.mp3` - Sound when collecting coins
-- `out2.mp3` - Sound when game ends
-
-**Note**: The game will work without audio files, but audio won't play. You can use any audio format supported by browsers (MP3, OGG, WAV).
-
-## 🎨 Customization
-
-- **Colors**: Edit the color values in `styles.css` and `game.js`
-- **Difficulty**: Adjust `obstacleSpeed`, `obstacleSpawnRate` in `game.js`
-- **Player**: Modify player size, gravity, and jump power in `game.js`
-
-## 📱 Responsive Breakpoints
-
-- Desktop: Full experience (800px max width)
-- Tablet: Optimized for 768px and below
-- Mobile: Optimized for 480px and below
-- Landscape: Special handling for landscape orientation
-
-## 🛠️ Technologies Used
-
 - HTML5 Canvas
 - CSS3 (Gradients, Flexbox, Responsive Design)
 - Vanilla JavaScript (No dependencies!)
